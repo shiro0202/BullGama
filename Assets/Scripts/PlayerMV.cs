@@ -6,6 +6,8 @@ public class PlayerMV : MonoBehaviour
 {
     public float speed = 0.5f;
 
+    [SerializeField] bool Move;
+
     private void Update()
     {
         float h = Input.GetAxisRaw("Horizontal");

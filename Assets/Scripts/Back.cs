@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Back : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private MeshRenderer render;
+
+    public float speed;
+
+    private float offset;
+
+    private void Start()
     {
-        
+        render = GetComponent<MeshRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        offset += Time.deltaTime * speed;
+        render.material.mainTextureOffset = new Vector2(offset, 0);
     }
 }
