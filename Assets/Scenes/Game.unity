@@ -562,7 +562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4567db845d4a6d5469ec1b6c46baa4db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.1
+  player: {fileID: 550571455}
 --- !u!64 &1525298101
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -644,8 +645,8 @@ Transform:
   m_GameObject: {fileID: 1525298099}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0148, y: 0.0032, z: 0}
-  m_LocalScale: {x: 17.737425, y: 9.967381, z: 1}
+  m_LocalPosition: {x: -0.0194, y: 0.0032, z: 0}
+  m_LocalScale: {x: 17.806602, y: 9.967381, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2001615126}
@@ -665,6 +666,10 @@ PrefabInstance:
     - target: {fileID: 1822459072394109406, guid: 35a824f2c0c35b54aa4f78df9f76afc5, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587745252440999134, guid: 35a824f2c0c35b54aa4f78df9f76afc5, type: 3}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3781205796332290474, guid: 35a824f2c0c35b54aa4f78df9f76afc5, type: 3}
       propertyPath: m_LocalScale.x

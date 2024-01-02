@@ -8,7 +8,11 @@ public class Back : MonoBehaviour
 
     public float speed;
 
+    [SerializeField] GameObject player;
+
     private float offset;
+
+    
 
     private void Start()
     {
@@ -17,7 +21,19 @@ public class Back : MonoBehaviour
 
     private void Update()
     {
-        offset += Time.deltaTime * speed;
-        render.material.mainTextureOffset = new Vector2(offset, 0);
+            offset += Time.deltaTime * speed;
+            render.material.mainTextureOffset = new Vector2(offset, 0);
+        if (Input.GetKey(KeyCode.D))
+        {
+            speed = 0.5f;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            speed = 0.5f;
+        }
+        else
+        {
+            speed = 0.2f;
+        }
     }
 }
