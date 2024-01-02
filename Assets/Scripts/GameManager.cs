@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject Ptn1;
-    [SerializeField] GameObject Ptn2;
-    [SerializeField] LungBossOne lungOne;
-    [SerializeField] LungBossTwo lungTwo;
+    public GameObject Ptn1;
+    public GameObject Ptn2;
+    LungBossOne lungOne;
+    LungBossTwo lungTwo;
 
     public float delayTime = 7f;
 
@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
         int BossPtn = Random.Range(1, 2);
         Ptn1.SetActive(false);
         Ptn2.SetActive(false);
-        lungOne = GetComponent<LungBossOne>();
-        lungTwo = GetComponent<LungBossTwo>();
+        Ptn1 = GameObject.Find("lung boss");
+        Ptn2 = GameObject.Find("lung boss_ptn2");
     }
 
     private void Update()
@@ -38,6 +38,5 @@ public class GameManager : MonoBehaviour
             Ptn2.SetActive(true);
             lungTwo.Ptn_two();
         }
-
     }
 }
