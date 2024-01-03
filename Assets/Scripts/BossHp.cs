@@ -8,10 +8,16 @@ public class Boss1Hp : MonoBehaviour
     [SerializeField] public float bossHp = 30f;
     [SerializeField] private Image hpbar;
     [SerializeField] public GameObject Clear;
+    [SerializeField] public GameObject Player;
+    [SerializeField] public GameObject End;
+
+
+    public End ed;
     // Start is called before the first frame update
     void Start()
     {
         Clear.SetActive(false);
+        ed = End.GetComponent<End>();
     }
 
     // Update is called once per frame
@@ -30,9 +36,11 @@ public class Boss1Hp : MonoBehaviour
             if(bossHp == 0)
             {
                 Clear.SetActive(true);
+                Destroy(Player);
+                ed.end();
                 Destroy(gameObject);
             }
-        }
     }
+}
     
     
