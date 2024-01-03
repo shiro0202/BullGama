@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject Ptn1;
     public GameObject Ptn2;
+    public GameObject Idle;
     LungBossOne lungOne;
     LungBossTwo lungTwo;
 
@@ -13,11 +14,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        int BossPtn = Random.Range(1, 2);
+        Idle.SetActive(true);
         Ptn1.SetActive(false);
         Ptn2.SetActive(false);
-        Ptn1 = GameObject.Find("lung boss");
-        Ptn2 = GameObject.Find("lung boss_ptn2");
+        lungOne = Ptn1.GetComponent<LungBossOne>();
+        lungTwo = Ptn2.GetComponent<LungBossTwo>();
     }
 
     private void Update()
@@ -30,11 +31,13 @@ public class GameManager : MonoBehaviour
         int BossPtn = Random.Range(1, 2);
         if (BossPtn == 1)
         {
+            Idle.SetActive(false);
             Ptn1.SetActive(true);
             lungOne.Ptn_one();
         }
         else if (BossPtn == 2)
         {
+            Idle.SetActive(false);
             Ptn2.SetActive(true);
             lungTwo.Ptn_two();
         }
