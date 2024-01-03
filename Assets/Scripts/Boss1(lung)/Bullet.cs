@@ -54,17 +54,23 @@ public class Bullet : MonoBehaviour
         rigid.velocity = Vector2.down * bulletSpeed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Lazer"))
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Lazer"))
         {
             Destroy(gameObject);
         }
     }
-    
+
+
+
 }

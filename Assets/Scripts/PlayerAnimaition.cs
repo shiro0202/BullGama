@@ -22,7 +22,6 @@ public class PlayerAnimaition : MonoBehaviour
         {
             Lazer.SetActive(true);
             ani.SetBool("attack", true);
-            Debug.Log("Å¬¸¯");
         }
 
 
