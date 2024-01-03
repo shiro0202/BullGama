@@ -19,15 +19,17 @@ public class Boss1Hp : MonoBehaviour
         hpbar.fillAmount = bossHp / 30;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Razer"))
+        if (collision.gameObject.CompareTag("Lazer"))
         {
-            bossHp = -5;
+            bossHp -= 5;
             if(bossHp == 0)
             {
                 Destroy(gameObject);
             }
         }
     }
+    
+    
 }

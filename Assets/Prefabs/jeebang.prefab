@@ -141,7 +141,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!60 &7417022270543302697
@@ -272,7 +272,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4747816723781792524}
   - component: {fileID: 2140043895693014246}
-  - component: {fileID: 2528737954791350872}
   - component: {fileID: 8261864011906310273}
   m_Layer: 0
   m_Name: collestreroll
@@ -345,21 +344,9 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2528737954791350872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4705274258747629251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f6ecca427d4384b99020fdae39994d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &8261864011906310273
 PolygonCollider2D:
   m_ObjectHideFlags: 0

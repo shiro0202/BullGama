@@ -17,7 +17,6 @@ public class Bullet : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         ran = Random.Range(1, 5);
@@ -58,6 +57,11 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Lazer"))
         {
             Destroy(gameObject);
         }

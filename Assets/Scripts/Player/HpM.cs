@@ -7,7 +7,7 @@ public class HpM : MonoBehaviour
     [SerializeField] private GameObject hpbar1;
     [SerializeField] private GameObject hpbar2;
     [SerializeField] private GameObject hpbar3;
-    [SerializeField] private int hp=3;
+    [SerializeField] public int hp = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,34 +17,33 @@ public class HpM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //HpH();
+    }
 
-
-        if (hp > 3)
-        {
-            hp = 3;
-        }
-
-
-
+    public void HpH()
+    {
         if (hp <= 0)
         {
             hpbar1.SetActive(false);
             hpbar2.SetActive(false);
             hpbar3.SetActive(false);
         }
-         if (hp >= 1)
+        else if (hp == 1)
         {
             hpbar1.SetActive(true);
             hpbar2.SetActive(false);
             hpbar3.SetActive(false);
         }
-        if(hp >= 2)
+        else if(hp == 2)
         {
+            hpbar1.SetActive(true);
             hpbar2.SetActive(true);
             hpbar3.SetActive(false);
         }
-        if(hp >= 3)
+        else if(hp == 3)
         {
+            hpbar1.SetActive(true);
+            hpbar2.SetActive(true);
             hpbar3.SetActive(true);
         }
     }
