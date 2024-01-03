@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2272480576c4c04c9639e2f464e5de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ptn1: {fileID: 1314030552823117910, guid: 5d5e0b2cf9a6cb049b9361440972606b, type: 3}
-  Ptn2: {fileID: 7377317573506634174, guid: cc02db44c89862c42b31b6ead750d7c8, type: 3}
-  Idle: {fileID: 5756207591775820492, guid: 5a8fb1f701d38304ea1c169ee93f71c9, type: 3}
-  delayTime: 7
+  Ptn1: {fileID: 0}
+  Ptn2: {fileID: 0}
+  Idle: {fileID: 0}
+  delayTime: 4
+  BossPtn: 0

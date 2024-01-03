@@ -41,12 +41,14 @@ public class LungBossTwo : MonoBehaviour
     void Fire()
     {
         // ÃÑ¾Ë ÇÁ¸®ÆÕ »ý¼º
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        for (int i = 0; i < 5; ++i)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        }
 
         // ÃÑ¾Ë ¹ß»ç
         //bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.forward * bulletSpeed ;
 
     //    // 2ÃÊ µÚ¿¡ ÆÄ±«
-        Destroy(bullet, 2.0f);
     }
 }
