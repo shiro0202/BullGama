@@ -24,6 +24,10 @@ public class Boss1Hp : MonoBehaviour
         if (collision.CompareTag("Razer"))
         {
             bossHp = -5;
+            if(bossHp == 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
