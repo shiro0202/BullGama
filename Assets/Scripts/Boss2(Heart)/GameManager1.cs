@@ -7,10 +7,11 @@ public class GameManager1 : MonoBehaviour
     public GameObject ptn1;
     public GameObject ptn2;
     public GameObject idle;
+    public GameObject fill;
     HeartBossOne HeartOne;
     HeartBossTwo HeartTwo;
 
-    public float delayTime = 7f;
+    public float delayTime = 5f;
     public int BossPtn;
 
 
@@ -22,11 +23,13 @@ public class GameManager1 : MonoBehaviour
         ptn2.SetActive(false);
         HeartOne = ptn1.GetComponent<HeartBossOne>();
         HeartTwo = ptn2.GetComponent<HeartBossTwo>();
+        UpdateH();
     }
 
     public void UpdateH()
     {
         idle.SetActive(true);
+        fill.transform.position = new Vector2(0, -7.63f);
 
         Invoke("RanPtn2", delayTime);
     }
