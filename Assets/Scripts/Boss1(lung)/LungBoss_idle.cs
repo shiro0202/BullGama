@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class LungBoss_idle : MonoBehaviour
 {
-    float rotSpeed = 100f;
+    float rotSpeed = 200f;
 
-    void Update()
+    public void Update()
     {
         transform.Rotate(new Vector3(0, 0, rotSpeed * Time.deltaTime));
     }

@@ -4,7 +4,26 @@ using UnityEngine;
 
 public class LungBossTwo : MonoBehaviour
 {
+    public GameObject GameManager;
+
     float rotSpeed = 100f;
+    public float Speed;
+    GameManager gameManager;
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+    public float bulletSpeed = 20f;
+    public float fireRate = 0.5f;
+    private float nextFire;
+    GameObject idle;
+    public LungBoss_idle LungIdle;
+
+
+    private void Start()
+    {
+        transform.position = new Vector2(0, 0);
+        gameManager = GameManager.GetComponent<GameManager>();
+        //LungIdle = idle.GetComponent<LungBoss_idle>();
+    }
 
     void Update()
     {
@@ -12,8 +31,22 @@ public class LungBossTwo : MonoBehaviour
     }
     public void Ptn_two()
     {
-        transform.position = new Vector2(0, 0);
-
+        nextFire = Time.time + fireRate;
+        Fire();
+        
+        gameManager.UpdateL();
+        LungIdle.Update();
         gameObject.SetActive(false);
+    }
+    void Fire()
+    {
+        // ÃÑ¾Ë ÇÁ¸®ÆÕ »ý¼º
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+
+        // ÃÑ¾Ë ¹ß»ç
+        //bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.forward * bulletSpeed ;
+
+    //    // 2ÃÊ µÚ¿¡ ÆÄ±«
+        Destroy(bullet, 2.0f);
     }
 }

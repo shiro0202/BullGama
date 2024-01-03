@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e267163285870bb4f9e8d9dcc88ba576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
   targetPoint: {fileID: 0}
-  moveSpeed: 7
+  moveSpeed: 10
 --- !u!60 &8271711111676323937
 PolygonCollider2D:
   m_ObjectHideFlags: 0

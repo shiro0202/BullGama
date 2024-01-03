@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 3442811337025953701}
   - component: {fileID: 8992266951622100417}
   - component: {fileID: 4370895616565946492}
+  - component: {fileID: 1547764749170054491}
   m_Layer: 0
   m_Name: lung boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4479624511946859658
 Transform:
   m_ObjectHideFlags: 0
@@ -177,3 +178,24 @@ PolygonCollider2D:
       - {x: 2.524067, y: -3.2763636}
       - {x: 4.1604304, y: -2.1636364}
   m_UseDelaunayMesh: 0
+--- !u!95 &1547764749170054491
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5756207591775820492}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3adb16801b87aa74ab5cd54be72d0629, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     LungBossTwo lungTwo;
 
     public float delayTime = 7f;
+    public int BossPtn;
 
     private void Start()
     {
@@ -19,16 +20,19 @@ public class GameManager : MonoBehaviour
         Ptn2.SetActive(false);
         lungOne = Ptn1.GetComponent<LungBossOne>();
         lungTwo = Ptn2.GetComponent<LungBossTwo>();
+        UpdateL();
     }
 
-    private void Update()
+    public void UpdateL()
     {
+        Idle.SetActive(true);
+
         Invoke("RanPtn", delayTime);
     }
 
     void RanPtn()
     {
-        int BossPtn = Random.Range(1, 2);
+        BossPtn = Random.Range(1, 3);
         if (BossPtn == 1)
         {
             Idle.SetActive(false);
