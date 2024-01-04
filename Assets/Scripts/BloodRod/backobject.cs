@@ -9,16 +9,16 @@ public class backobject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left*speed * Time.deltaTime);
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
 
 
-        if (transform.position.x == -7)
+        if (transform.position.x <= -10)
         {
             Destroy(gameObject);
         }

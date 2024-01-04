@@ -4,27 +4,44 @@ using UnityEngine;
 
 public class PlayerHp : MonoBehaviour
 {
+    public static PlayerHp instance;
+
     [SerializeField] public GameObject Over;
     [SerializeField] public GameObject Boss;
     [SerializeField] public GameObject End;
+   // public GameSceneManager sceneManager;
     public End ed; 
-    public HpM Hp;
+    //public HpM Hp;
 
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else 
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
+    private void OnEnable()
+    {
+       /* Over = GameObject.Find("GameOver");
+        Over.SetActive(false);*/
+        ed = End?.GetComponent<End>();
+    }
     private void Start()
     {
-        Over.SetActive(false);
-        ed = End.GetComponent<End>();
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Boss"))
         {
-            Hp.hp -= 1;
+            HpM.instance.hp -= 1;
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Hp.hp -= 1;
+            HpM.instance.hp -= 1;
         }
     }
 
@@ -32,17 +49,18 @@ public class PlayerHp : MonoBehaviour
     {
         if (collision.CompareTag("Blood"))
         {
-            Hp.hp -= 1;
+            HpM.instance.hp -= 1;
         }
     }
 
     private void Update()
     {
-        if(Hp.hp <= 0)
+        if(HpM.instance.hp <= 0)
         {
-            Over.SetActive(true);
-            ed.end();
-            Destroy(gameObject);
+            UIManager.instance.ShowOverText();
+            GameSceneManager.instance.end();
+            //ed.end();
+            //Destroy(gameObject);
         }
     }
 }

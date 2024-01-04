@@ -4,10 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HpM : MonoBehaviour
 {
+    public static HpM instance;
     [SerializeField] private GameObject hpbar1;
     [SerializeField] private GameObject hpbar2;
     [SerializeField] private GameObject hpbar3;
-    [SerializeField] public int hp = 3;
+    public int hp = 3;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -10,14 +10,16 @@ public class Boss1Hp : MonoBehaviour
     [SerializeField] public GameObject Clear;
     [SerializeField] public GameObject Player;
     [SerializeField] public GameObject End;
-    [SerializeField] public PlayerUI ui;
+   // [SerializeField] public GameSceneManager ui;
 
 
     public End ed;
     // Start is called before the first frame update
     void Start()
     {
-        Clear.SetActive(false);
+        Player = GameObject.Find("Player");
+       /* Clear = GameObject.Find("GameClear");
+        Clear?.SetActive(false);*/
         ed = End.GetComponent<End>();
     }
 
@@ -36,10 +38,10 @@ public class Boss1Hp : MonoBehaviour
         }
             if(bossHp == 0)
             {
-                Clear.SetActive(true);
+                UIManager.instance.ShowClearText();
                 Destroy(Player);
-                ui.LoadnextScene();
-                ed.end();
+                GameSceneManager.instance.LoadnextScene();
+                //ed.end();
                 Destroy(gameObject);
             }
     }
