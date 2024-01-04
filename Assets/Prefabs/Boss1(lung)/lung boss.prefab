@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 8992266951622100417}
   - component: {fileID: 4370895616565946492}
   - component: {fileID: 1547764749170054491}
+  - component: {fileID: 3718717795635580787}
   m_Layer: 0
   m_Name: lung boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,3 +200,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3718717795635580787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5756207591775820492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d5eb757c659a7499c98ca6908ef54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossHp: 30
+  hpbar: {fileID: 0}
+  Clear: {fileID: 0}
+  Player: {fileID: 0}
+  End: {fileID: 0}
+  ui: {fileID: 0}
+  ed: {fileID: 0}

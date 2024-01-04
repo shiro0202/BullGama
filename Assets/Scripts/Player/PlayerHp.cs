@@ -28,12 +28,19 @@ public class PlayerHp : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Blood"))
+        {
+            Hp.hp -= 1;
+        }
+    }
+
     private void Update()
     {
-        if(Hp.hp == 0)
+        if(Hp.hp <= 0)
         {
             Over.SetActive(true);
-            Destroy(Boss);
             ed.end();
             Destroy(gameObject);
         }

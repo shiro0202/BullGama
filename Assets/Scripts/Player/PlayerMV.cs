@@ -2,12 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMV : MonoBehaviour
 {
+    Score score;
+    Dori_Cha DC;
     public float speed = 0.5f;
 
     public bool Move;
 
+    public bool UresaPower = false;
+
+    private void Awake()
+    {
+        score = FindAnyObjectByType<Score>();
+        DC = FindAnyObjectByType<Dori_Cha>();
+    }
     private void Update()
     {
         float h = Input.GetAxisRaw("Horizontal");
@@ -18,4 +28,15 @@ public class PlayerMV : MonoBehaviour
 
         transform.position = curPos + nextPos;
     }
+
+
+    public void Uruusa()
+    {
+        score.GetScore(200);
+
+        DC.ddd();
+        Debug.Log("간겅강 최고오");
+        UresaPower = true;
+    }
+
 }

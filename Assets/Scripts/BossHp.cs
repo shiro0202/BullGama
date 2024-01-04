@@ -10,6 +10,7 @@ public class Boss1Hp : MonoBehaviour
     [SerializeField] public GameObject Clear;
     [SerializeField] public GameObject Player;
     [SerializeField] public GameObject End;
+    [SerializeField] public PlayerUI ui;
 
 
     public End ed;
@@ -37,6 +38,7 @@ public class Boss1Hp : MonoBehaviour
             {
                 Clear.SetActive(true);
                 Destroy(Player);
+                ui.LoadnextScene();
                 ed.end();
                 Destroy(gameObject);
             }

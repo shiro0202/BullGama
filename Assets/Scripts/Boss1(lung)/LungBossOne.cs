@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LungBossOne : MonoBehaviour
 {
-    public GameManager gameManager;
+    public GameManager1 gameManager;
     GameObject idle;
     public LungBoss_idle LungIdle;
 

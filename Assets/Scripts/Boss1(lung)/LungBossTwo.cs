@@ -7,8 +7,8 @@ public class LungBossTwo : MonoBehaviour
     public GameObject GameManager;
 
     float rotSpeed = 100f;
+    GameManager1 gameManager;
     public float Speed;
-    GameManager gameManager;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float bulletSpeed = 20f;
@@ -21,7 +21,7 @@ public class LungBossTwo : MonoBehaviour
     private void Start()
     {
         transform.position = new Vector2(0, 0);
-        gameManager = GameManager.GetComponent<GameManager>();
+        gameManager = GameManager.GetComponent<GameManager1>();
         //LungIdle = idle.GetComponent<LungBoss_idle>();
     }
 

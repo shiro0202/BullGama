@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
-public class Bullet : MonoBehaviour
+public class Bullet1 : MonoBehaviour
 {
-    [SerializeField] private float bulletSpeed = 20f;
+    [SerializeField] private float bulletSpeed = 10f;
+    public Transform targetPoint;
     Rigidbody2D rigid;
     int ran;
 
@@ -14,44 +16,21 @@ public class Bullet : MonoBehaviour
     }
     void Start()
     {
-        
+        targetPoint = FindObjectOfType<PlayerMV>().transform;
+        Vector2 newPos = targetPoint.transform.position - transform.position;
+        float rotZ = Mathf.Atan2(newPos.y, newPos.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
     }
 
     void FixedUpdate()
     {
         ran = Random.Range(1, 5);
-        if(ran == 1)
-        {
-            Up();
-        }
-        else if (ran == 2)
-        {
-            Left();
-        }
-        else if (ran == 3)
-        {
-            Right();
-        }
-        else if (ran == 4)
-        {
-            Down();
-        }
+        Up();
     }
     void Up()
     {
-        rigid.velocity = transform.up * bulletSpeed;
-    }
-    void Left()
-    {
-        rigid.velocity = Vector2.left * bulletSpeed;
-    }
-    void Right()
-    {
         rigid.velocity = transform.right * bulletSpeed;
-    }
-    void Down()
-    {
-        rigid.velocity = Vector2.down * bulletSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -74,7 +53,5 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 
 }
